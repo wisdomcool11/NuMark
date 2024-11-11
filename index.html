@@ -1,0 +1,375 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>NUMARK</title>
+
+    <!-- scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9753f25b53.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind Style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        @layer base{
+
+                /* PT+Sans google font */
+                 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /* google font jost */
+                @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /*###### custom styling #####*/
+
+                /* list styling */
+                .list_style{
+                    @apply hover:border hover:border-[#ee8f00] hover:text-[#ee8f00] p-1 rounded rounded-md hover:shadow-lg  text-sm md:text-base transform hover:scale-[1.03] active:translate-y-[4px]  transition ease-out duration-150 
+                }
+
+                /*special fade in styling  */
+                @media (max-width: 640px ) {
+                    nav{
+                    position: absolute;
+                    top: 6rem;
+                    left: 0px;
+                    width: 100%;
+                    background-color: #222;
+
+                    max-height: 0px;
+                    visibility: hidden;
+                    transition: max-height 380ms ease,
+                        visibility 350ms ease
+                    ;
+                    }
+
+                    header.active nav{
+                        z-index: 10;
+                        max-height: 21.875rem;/*350px */
+                        visibility: visible;
+                        animation: fadeIn 0.7s ease-in-out;
+                        /* the animation above will create a fade in effect */
+                    }
+
+                    @keyframes fadeIn{
+                        from{
+                            opacity: 0;
+                            transform: translateY(-12px);
+                        }
+                        to{
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+ 
+                .hero_img{
+                    background-image: url(bg.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                /* CTA*/
+                .fa-arrow-right {
+                    transform: rotateZ(-45deg);
+                    perspective: 800px;
+                }
+                .CTA:active .fa-solid {
+                    animation: roll_back .2s ease-in ;
+                }
+
+                @keyframes roll_back {
+                   from{
+                        transform: rotateZ(-45deg);
+                   }
+                   to{
+                        transform: rotateZ(15deg)
+                   } 
+                }
+
+                hr{
+                    width: 200px;
+                    background-color: #292524;
+                }
+
+                .team__img{
+                    @apply w-16 rounded rounded-full h-16 object-cover
+                }
+                .fa-star {
+                    @apply text-stone-800 text-lg shadow-md
+                }
+
+                .move__right:active{
+                    animation: animate__right 0.2s ease-in;
+                }
+
+                @keyframes animate__right {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                    to{
+                        opacity: 0.4;
+                        transform: translateX(50px);
+                    }
+                }
+
+                .juggle__btn {
+                    @apply border-4 border-stone-600  font-semibold text-stone-800 rounded rounded-s-full rounded-e-full text-sm md:w-28 h-[50px] shadow-lg bg-white hover:rotate-0 transform active:translate-y-[4px] transition ease-in-out duration-150 ;
+                }
+
+                .btn__up{
+                    @apply transform rotate-12 ;
+                }
+                
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-800">
+    
+    <div class="relative bg-stone-800 h-screen w-full">
+        <div class=" bg-[#ee8f00] w-80 h-96 rounded-e-full"> </div>
+        
+        <!-- main container -->
+        
+        <div class="container w-full absolute top-[10%] md:left-[3%] tranform translate-[-50%, -50%] bg-slate-50 rounded rounded-2xl p-3 md:p-8 ">
+
+            <div >
+
+                <header class="relative bg-stone-800 w-full rounded rounded-xl p-2 text-white font-normal flex justify-between">
+
+                    <!-- holds the page title and the nav container together -->
+                    <div class="flex flex-col md:flex-row items-start justify-center md:items-center md:gap-14   px-2  md:w-[600px] ">
+
+                        <!-- webpage name -->
+                        <div class="flex justify-center gap-1 items-center px-2 h-full w-max">
+                            
+                            <i class="fa-solid fa-star text-[#ee8f00] text-2xl md:text-base"></i>
+    
+                            <h1 class="font-['PT Sans', sans-serif] font-bold text-xl md:text-base">
+                                NuMark
+                            </h1>
+                        </div>
+    
+                        <!-- nav --> 
+                        <nav class="nav_menu md:block absolute top-[100%] left-0 z-10 md:relative md:top-0  bg-stone-800 w-full text-slate-300 font-['PT Sans', sans-serif] font-normal py-2 px-2  mt-2 rounded rounded-b-lg ">
+
+                            <ul class="flex flex-row md:justify-around justify-center w-full justify-between md:items-center  ">
+
+                                <li class="list_style "><a href="#" class="text-white hover:text-[#ee8f00] md:px-4  "> Home </a>
+                                </li>
+
+                                <li class="list_style"><a href="#" >Solutions</a>
+                                </li>
+
+                                <li class="list_style"><a href="#" class=" md:px-4 " >Features</a></li>
+
+                                <li class="list_style"><a href="#" class=" md:px-4 ">Pricing</a></li>
+
+                                <li class="list_style"><a href="#"  class=" md:px-4 ">Contact</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!--nav button -->
+                    <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1">
+
+                        <button class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                            Sign In
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </button>
+
+                        <button class=" py-2 px-3 md:px-6 bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                            Try for free
+                        </button>
+
+                    </div>
+
+                    <!-- toggle bar or burger -->
+                    <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                      
+
+                </header><!--ending of header-->
+
+            </div>
+
+            <!-- Hero section -->
+
+            <section class=" w-full my-14 space-y-14">   
+                <div class="flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center">
+                    <!-- hold the hero img and text content -->
+                    <div class="flex flex-col gap-7 w-full md:p-4 justify-center items-center md:justify-center md:items-start " >
+
+                        <h2 class=" text-stone-900 text-4xl font-bold w-[400px] leading-10 text-center mx-auto md:text-left md:mx-0 " id="hero__text">
+                            Elevate Your Brand 
+                            with Numarking
+                        </h2>
+
+                        <p class=" font-base text-stone-600 text-md w-[400px] text-center mx-auto md:mx-0 md:text-left  md:w-[500px] p-3" id="hero__content">
+                            At Numarking, we blend creative and data-driven strategies to deliver exceptional marketing solutions. Our dedicated team of experts is here to help your brand stand out and achieve measurable success. Let us transform your vision into reality
+                        </p>
+
+                        <a href="#" class="CTA transform hover:scale-[1.05] active:translate-y-[4px] transition ease-in-out duration-150">
+                            <!-- CTA button -->
+                            <button class="bg-stone-800 rounded rounded-2xl font-semibold p-2 px-3 text-white  w-44 md:w-80 " id="CTA__btn">
+                                Start Your Transfer
+                            </button>
+
+                            <!-- arrow -->
+                            <i class="fa-solid fa-arrow-right  bg-stone-800 text-white p-4 rounded rounded-full  active:text-[#ee8f00]"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero_img rounded rounded-2xl border-2 border-t-8 border-r-8 border-l-0 border-b-0 border-stone-800 overflow-hidden">
+                        <!-- hero img -->
+                        <img src="meeting2.png" alt="img of people in a meeting" class="object-cover grayscale" >
+                    </div>
+
+                </div>
+
+                <div class="grid  grid-cols-1 grid-rows-4 md:grid-cols-4 md:grid-rows-2 grid-flow-dense  gap-2">
+                    <!-- hold the other content below -->
+                    <div class="col-start-1 col-end-2 row-start-1 row-end-2 md:row-span-2 flex flex-col gap-20 bg-yellow-100 p-6 pr-8 rounded rounded-2xl border-2 border-t-8 border-r-8 border-l-0 border-b-0 border-stone-800 overflow-hidden hover:shadow-lg" id="card__one">
+                        <div class="flex items-center  w-[80%] ">
+                            <!-- imgs -->
+                            <img src="test_4.jpg" alt="team member 1" class="team__img">
+
+                            <img src="test_5.jpg" alt="team member 1" class="team__img">
+
+                            <img src="test_6.jpg" alt="team member 1" class="team__img">
+
+                            <img src="test_7.jpg" alt="team member 1" class="team__img">
+                        </div>
+
+                        
+                        <div class="flex flex-col gap-10">
+                            <hr ><!--horizonal line accross the card-->
+
+                            <div class="space-y-3">
+
+                                <h4 class="w-46 text-lg uppercase font-bold">
+                                    We're creative and Talented Team
+                                </h4>
+    
+                                <div class="flex justify-around items-center gap-4  w-full">
+                                    <!-- star rating -->
+                                    <i class="fa-solid fa-star "></i>
+                                    <i class="fa-solid fa-star "></i>
+                                    <i class="fa-solid fa-star "></i>
+                                    <i class="fa-solid fa-star "></i>
+                                    <i class="fa-solid fa-star "></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row-start-2 row-end-2 md:row-span-2 md:w-[300px] rounded rounded-2xl border-2 border-t-8 border-r-8 border-l-0 border-b-0 border-[#ee8f00] overflow-hidden bg-stone-800 text-yellow-50 px-2 py-6  space-y-4 hover:shadow-lg" id="card__two">
+
+                        <div class="border border-stone-300 rounded-full w-28">
+                            <button class="move__right hover:shadow-lg">
+                                <!-- cirlce halp icon -->
+                                <i class="fa-solid fa-circle-half-stroke w-full h-full py-2 px-6 text-[#ee8f00] bg-stone-700 rounded-full"></i>
+                            </button>
+                        </div>
+
+                        <h3 class="text-yellow-100 text-2xl w-64 capitalize font-bold leading-7">
+                            Comprehensive Marketing Solutions
+                        </h3>
+
+                        <p class="text-sm font-base w-full ">
+                            We offer a wide range of services designed to meet your unique needs and goals.
+                        </p>
+
+                        <div class="w-full">
+
+                            <ul class="grid grid-cols-2 grid-rows-4 grid-flow-dense text-xs  font-base  list-image-[url(check-mark.png)]  list-inside  ">
+                                <li class="w-full">Banding & Identity</li>
+                                <li>Content Marketing</li>
+                                <li>Digital Advertising</li>
+                                <li>Social Media Management</li>
+                                <li>SEO & SEM</li>
+                                <li>Analytics & Reporting</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-span-2">
+                        <div class="w-full h-full flex justify-center items-center text-stone-800 uppercase  ">
+                            <span class="w-full h-full flex flex-col justify-center items-center text-center space-y-2">
+                                <h3 class="text-4xl font-bold">100+</h3>
+                                <p class="text-xs font-bold">100+ Creative & Futuristic</p>
+                            </span>
+
+                            <span class="w-full h-full flex flex-col justify-center items-center  text-center space-y-2">
+                                <h3 class="text-4xl font-bold ">15yr</h3>
+                                <p class="text-xs font-bold " >Have Working 15 Years+</p>
+                            </span>
+                        </div>    
+                    </div>
+
+                    <div class="col-span-2 grid md:grid-cols-1 grid-rows-2">
+
+                        <div class="bg-gray-150 grid grid-cols-2 grid-rows-3 grid-flow-dense gap-2 md:flex md:justify-center md:items-end md:gap-0 py-4 ">
+                            <button class="juggle__btn border-[#ee8f00] md:btn__up">Branding</button>
+
+                            <button class="juggle__btn  md:tranform md:-rotate-12 ">SEO</button>
+
+                            <button class="juggle__btn border-[#ee8f00] md:btn__up ">SEM</button>   
+
+                            <button class="juggle__btn md:tranform md:-rotate-12 ">Influencer</button>
+
+                            <button class="juggle__btn border-[#ee8f00] col-span-2 md:btn__up ">Analytics</button>
+                        </div>
+
+                        <div class="bg-gray-150 grid grid-cols-2 grid-rows-3 grid-flow-dense gap-2 md:flex md:justify-center md:items-start md:gap-0 py-4 ">
+                            <button class="juggle__btn md:tranform md:-rotate-12 ">Social</button>
+                            <button class="juggle__btn border-[#ee8f00] md:btn__up ">Retargeting</button>
+                            <button class="juggle__btn md:md:tranform md:-rotate-12 ">Positioning</button>
+                            <button class="juggle__btn border-[#ee8f00] md:btn__up ">Competitors</button>
+                            <button class="juggle__btn col-span-2 md:md:tranform md:-rotate-12 ">Consulting</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
+
