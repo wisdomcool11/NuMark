@@ -21,7 +21,7 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('header', {delay: 200, origin: 'top'});
-ScrollReveal().reveal('#hero__text, #hero__content, #CTA__btn',{delay: 700, origin: 'left', interval: 400 })
+ScrollReveal().reveal('#hero__text, #hero__content, #CTA__btn',{delay: 600, origin: 'left', interval: 400 })
 ScrollReveal().reveal('#card__one, #card__two',{delay: 500, origin: 'bottom' , interval: 200 })
 
 
